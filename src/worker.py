@@ -8,9 +8,9 @@ def setup_server():
     from mcp.server.fastmcp import FastMCP
     from starlette.middleware import Middleware
     from starlette.middleware.cors import CORSMiddleware
-
     from exceptions import HTTPException, http_exception
-    mcp = FastMCP("Demo", stateless_http=True)
+    
+    mcp = FastMCP("Hastra-FM-MCP", stateless_http=True)
 
     @mcp.tool()
     def add(a: int, b: int) -> int:
