@@ -7,13 +7,14 @@ if ! command -v python3.12 &> /dev/null; then
     exit 1
 fi
 
-# # Create Python virtual environment
-# if [ ! -d ".venv" ]; then
-#     echo "Creating Python virtual environment (.venv)..."
-#     python3.12 -m venv .venv
-# else
-#     echo "Using existing Python virtual environment (.venv)..."
-# fi
+# Create Python virtual environment
+if [ ! -d ".venv" ]; then
+    echo "Creating Python virtual environment (.venv)..."
+    apt install python3.12-venv
+    python3.12 -m venv .venv
+else
+    echo "Using existing Python virtual environment (.venv)..."
+fi
 
 
 # Create pyodide virtual environment if it doesn't exist
