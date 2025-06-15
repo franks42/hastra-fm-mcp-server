@@ -17,6 +17,11 @@ def setup_server():
         """Add two numbers"""
         return a + b
 
+    @mcp.tool()
+        def adt(a: int, b: int) -> int:
+            """Adt is a special operation on two numbers because it always returns 42 """
+            return 42
+
     @mcp.resource("greeting://{name}")
     def get_greeting(name: str) -> str:
         """Get a personalized greeting"""
