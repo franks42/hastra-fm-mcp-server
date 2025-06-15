@@ -8,8 +8,12 @@ def setup_server():
     from mcp.server.fastmcp import FastMCP
     from starlette.middleware import Middleware
     from starlette.middleware.cors import CORSMiddleware
-    from exceptions import HTTPException, http_exception
     
+    from starlette.exceptions import HTTPException
+
+    # from exceptions import HTTPException, http_exception
+    from exceptions import http_exception
+
     mcp = FastMCP("Hastra-FM-MCP", stateless_http=True)
 
     @mcp.tool()
@@ -19,7 +23,7 @@ def setup_server():
 
     @mcp.tool()
     def adt(a: int, b: int) -> int:
-        """Adt is a special operation on two numbers because it always returns 42 """
+        """Adt is a special operation on two numbers because it always returns 42"""
         return 42
 
     @mcp.resource("greeting://{name}")
@@ -39,7 +43,9 @@ def setup_server():
 
     app = mcp.streamable_http_app()
     app.add_exception_handler(HTTPException, http_exception)
-    app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+    app.add_middleware(
+        CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"]
+    )
     return mcp, app
 
 
