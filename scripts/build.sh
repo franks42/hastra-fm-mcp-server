@@ -10,8 +10,9 @@ fi
 # Create Python virtual environment
 if [ ! -d ".venv" ]; then
     echo "Creating Python virtual environment (.venv)..."
-    sudo apt install python3.12-venv
-    python3.12 -m venv .venv
+    # sudo apt install python3.12-venv
+    # python3.12 -m venv .venv
+    python -m venv .venv
 else
     echo "Using existing Python virtual environment (.venv)..."
 fi

@@ -2,7 +2,7 @@
 
 This is an example of a Python Worker that uses the FastMCP package.
 
-[![Deploy to Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/danlapid/python-workers-mcp/)
+[![Deploy to Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?https://github.com/franks42/hastra-fm-mcp-server/)
 
 >[!NOTE]
 >Due to the [size](https://developers.cloudflare.com/workers/platform/limits/#worker-size) of the Worker, this example can only be deployed if you're using the Workers Paid plan. Free plan users will encounter deployment errors because this Worker exceeds the 3MB size limit.
