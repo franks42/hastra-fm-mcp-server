@@ -1,5 +1,5 @@
 {
-    "name": "hastra-fm-mcp-server",
+    "name": "hastra-fm-mcp-server2",
     "main": "src/worker.py",
     "compatibility_flags": [
         "python_workers",
